@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 const { ApolloServer, PubSub } = require('apollo-server');
 const mongoose = require('mongoose');
 
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
 
-const { MONGODB } = require('./config');
+const MONGODB = process.env.MONGODB;
 
 const pubsub = new PubSub();
 
